@@ -1,0 +1,17 @@
+logging:
+#  config: classpath:log4j2_dev.xml
+  level:
+    root: info
+
+server:
+  port: 13000
+
+#schedule:
+#  gov-blacklist:
+#    cron.ms: 86400000
+#
+#spring:
+#  data:
+#    mongodb:
+#      uri: mongodb://10.103.17.110:27017,10.103.17.122:27017,10.103.33.134:27017,10.120.15.25:27017/mediatype?authSource=admin
+#      collection-name: dev_gov_blackmedia

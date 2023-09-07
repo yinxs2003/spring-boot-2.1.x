@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="INFO" monitorInterval="30">
+    <Properties>
+        <Property name="baseDir">../logs</Property>
+        <Property name="app">spring-boot-readcode</Property>
+    </Properties>
+
+    <appenders>
+        <console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %highlight{%5p} traceId:%36X{traceId} %c:%L - %m %n"/>
+        </console>
+        <RollingFile name="RollingFileInfo" fileName="${baseDir}/${app}.log"
+                     filePattern="${baseDir}/${app}.log.%d{yyyy-MM-dd}">
+            <PatternLayout pattern="%d %5p %c:%L [%t] - %m %n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </appenders>
+
+    <loggers>
+        <Root level="INFO" includeLocation="true">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="RollingFileInfo"/>
+        </Root>
+    </loggers>
+</configuration>
