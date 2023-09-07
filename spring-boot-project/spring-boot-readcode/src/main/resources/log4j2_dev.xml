@@ -7,7 +7,7 @@
 
     <appenders>
         <console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d %highlight{%5p} traceId:%36X{traceId} %c:%L - %m %n"/>
+            <PatternLayout pattern="%d %highlight{%5p} traceId:%4X{traceId} %c:%L - %m %n"/>
         </console>
         <RollingFile name="RollingFileInfo" fileName="${baseDir}/${app}.log"
                      filePattern="${baseDir}/${app}.log.%d{yyyy-MM-dd}">

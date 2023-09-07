@@ -1,5 +1,5 @@
 logging:
-#  config: classpath:log4j2_dev.xml
+  config: classpath:log4j2_dev.xml
   level:
     root: info
 
