@@ -131,13 +131,13 @@ class BeanDefinitionLoader {
 
 	private int load(Object source) {
 		Assert.notNull(source, "Source must not be null");
-		if (source instanceof Class<?>) {
+		if (source instanceof Class<?>) { // 载入注解形式的类
 			return load((Class<?>) source);
 		}
-		if (source instanceof Resource) {
+		if (source instanceof Resource) { // 载入xml或者groovy文件的资源
 			return load((Resource) source);
 		}
-		if (source instanceof Package) {
+		if (source instanceof Package) { // 按照包形式载入包下的所有资源，包括xml和注解
 			return load((Package) source);
 		}
 		if (source instanceof CharSequence) {
